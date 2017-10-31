@@ -1,0 +1,14 @@
+{
+  "name": "agent-bot",
+  "version": "1.0.0",
+  "description": "see [example explanation](https://livepersoninc.github.io/node-agent-sdk/agent-bot.html)",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-agent-sdk": "^0.2.20"
+  }
+}
