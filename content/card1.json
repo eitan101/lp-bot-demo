@@ -1,0 +1,86 @@
+{
+    "type": "vertical",
+    "elements": [
+        {
+            "type": "image",
+            "url": "https://images.unsplash.com/photo-1500990702037-7620ccb6a60a?auto=format&fit=crop&w=2850&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D",
+            "tooltip": "image tooltip"
+        },
+        {
+            "type": "text",
+            "text": "Title",
+            "style": {
+                "bold": true,
+                "size": "large"
+            }
+        },
+        {
+            "type": "text",
+            "text": "Subtitle"
+        },
+        {
+            "type": "horizontal",
+            "elements": [
+                {
+                    "type": "button",
+                    "title": "Buy",
+                    "tooltip": "Buy this product",
+                    "click": {
+                        "metadata": [
+                            {
+                                "type": "ExternalId",
+                                "id": "BUY_ID"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "link",
+                                "name": "Buy",
+                                "uri": "http://www.google.com"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "button",
+                    "title": "Find similar",
+                    "tooltip": "store is the thing",
+                    "click": {
+                        "metadata": [
+                            {
+                                "type": "ExternalId",
+                                "id": "FIND_SIMILAR_ID"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "link",
+                                "name": "Buy",
+                                "uri": "http://www.google.com"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "tooltip": "button tooltip",
+            "title": "Publish text",
+            "click": {
+                "metadata": [
+                    {
+                        "type": "ExternalId",
+                        "id": "PUBLIS_TEXT_ID"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "publishText",
+                        "text": "my text"
+                    }
+                ]
+            }
+        }
+    ]
+}
