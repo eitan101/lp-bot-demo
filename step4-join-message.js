@@ -16,6 +16,8 @@ const echoAgent = new MyCoolAgent({
 var mycard = JSON.parse(fs.readFileSync('./content/card1.json', 'utf8'));
 
 echoAgent.on('MyCoolAgent.JoinedEvnet', (convData) => {
+    // const firstNames = convData.consumerProfile.filter(e=>e.type=='personal').map(e=>e.personal.firstname);
+    // mycard.elements[2].text = `Hello ${firstNames[0]||"visitor"},`
     echoAgent.publishEvent({
         dialogId: convData.id,
         event: {
