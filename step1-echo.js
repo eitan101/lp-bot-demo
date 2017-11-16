@@ -18,7 +18,7 @@ echoAgent.on('MyCoolAgent.ContentEvnet', (contentEvent) => {
         event: {
             type: 'ContentEvent',
             contentType: 'text/plain', 
-            message: JSON.stringify(contentEvent)
+            message: contentEvent.message
         }
     });
 });

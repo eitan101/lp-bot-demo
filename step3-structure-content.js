@@ -12,14 +12,25 @@ const echoAgent = new MyCoolAgent({
     csdsDomain: process.env.LP_CSDS
 });
 
-var mycard = JSON.parse(fs.readFileSync('./content/card.json', 'utf8'));
+var mycard = JSON.parse(fs.readFileSync('./content/card1.json', 'utf8'));
 
 echoAgent.on('MyCoolAgent.ContentEvnet', (contentEvent) => {
-    echoAgent.publishEvent({
-        dialogId: contentEvent.dialogId,
-        event: {
-            type: 'RichContentEvent',
-            content: mycard
-        }
-    });
+    if (contentEvent.message && contentEvent.message.startsWith('#rich')) {
+        echoAgent.publishEvent({
+            dialogId: contentEvent.dialogId,
+            event: {
+                type: 'RichContentEvent',
+                content: mycard
+            }
+        }, null, [{ type: "ExternalId", id: "MY_CARD_ID" }]);
+    } else {
+        echoAgent.publishEvent({
+            dialogId: contentEvent.dialogId,
+            event: {
+                type: 'ContentEvent',
+                contentType: 'text/plain',
+                message: JSON.stringify(contentEvent)
+            }
+        });
+    }
 });
