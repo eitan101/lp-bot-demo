@@ -21,7 +21,7 @@ echoAgent.on('MyCoolAgent.ContentEvnet', (contentEvent) => {
             event: {
                 type: 'ContentEvent',
                 contentType: 'text/plain', 
-                message: "I'm still alive"
+                message: `I'm still alive: ${contentEvent.message}`
             }
         });
     }
